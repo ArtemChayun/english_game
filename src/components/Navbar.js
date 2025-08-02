@@ -1,8 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { signOut } from 'firebase/auth';
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
-function Navbar({ gameStarted, onGoHome, user, onLogout }) {
+function Navbar({ gameStarted, onGoHome, user }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const navigate = useNavigate();
 
   // Закрыть меню при клике вне его
   useEffect(() => {
@@ -15,24 +19,33 @@ function Navbar({ gameStarted, onGoHome, user, onLogout }) {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      navigate('/login');
+    } catch (error) {
+      alert('Помилка при виході: ' + error.message);
+    }
+  };
 
   return (
     <nav style={styles.nav}>
       {/* Логотип */}
       <div style={styles.logo}>
-        <span role="img" aria-label="logo" style={{fontSize: '1.8rem'}}>📚</span>  
-        <span style={{marginLeft: 8, fontWeight: 'bold', fontSize: '1.2rem'}}>LearnEnglishKids</span>
+        <span role="img" aria-label="logo" style={{ fontSize: '1.8rem' }}>📚</span>
+        <span style={{ marginLeft: 8, fontWeight: 'bold', fontSize: '1.2rem' }}>LearnEnglishKids</span>
       </div>
 
-      {/* Справа */}
+      {/* Правая часть */}
       <div style={styles.rightSide}>
         {gameStarted && (
           <button style={styles.homeButton} onClick={onGoHome}>Головна</button>
         )}
         <div style={styles.avatarWrapper} ref={menuRef}>
           <img
-            src={user.avatarUrl}
+            src={user?.avatarUrl || 'https://i.pravatar.cc/150?img=1'}
             alt="avatar"
             style={styles.avatar}
             onClick={toggleMenu}
@@ -45,7 +58,7 @@ function Navbar({ gameStarted, onGoHome, user, onLogout }) {
               <button style={styles.dropdownItem} onClick={() => { alert('Налаштування'); setMenuOpen(false); }}>
                 Налаштування
               </button>
-              <button style={styles.dropdownItem} onClick={() => { onLogout(); setMenuOpen(false); }}>
+              <button style={styles.dropdownItem} onClick={handleLogout}>
                 Вийти з додатку
               </button>
             </div>

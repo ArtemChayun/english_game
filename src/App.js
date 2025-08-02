@@ -1,92 +1,63 @@
-import React, { useState, useEffect, useRef } from 'react';
-import GuessWordGame from './components/GuessWordGame';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import GameTile from './components/GameTile';
+import GuessWordGame from './components/GuessWordGame';
 import SpellWordGame from './components/SpellWordGame';
-import './App.css';
-
-const categories = [
-  { id: 'animals', label: 'Тварини' },
-  { id: 'food', label: 'Їжа' },
-  //{ id: 'transport', label: 'Транспорт' },
-  //{ id: 'furniture', label: 'Меблі' },
-  //{ id: 'electronics', label: 'Електроніка' },
-  //{ id: 'clothes', label: 'Одяг' },
-  //{ id: 'nature', label: 'Природа' },
-  //{ id: 'school', label: 'Школа' },
-  //{ id: 'buildings', label: 'Будівлі' },
-  { id: 'colors', label: 'Кольори' },
-  { id: 'numbers', label: 'Цифри' },
- // { id: 'emotions', label: 'Емоції' },
-  //{ id: 'body parts', label: 'Частини тіла' },
-  //{ id: 'professions', label: 'Професії' },
-  //{ id: 'sports', label: 'Спорт' },
-  //{ id: 'verbs', label: 'Дії' }
-];
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import { auth } from './firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 function App() {
   const [currentGame, setCurrentGame] = useState(null);
-  const [showCategoryPopup, setShowCategoryPopup] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  const popupRef = useRef();
-
-  const user = {
-    avatarUrl: 'https://i.pravatar.cc/150?img=12',
-    name: 'User'
-  };
+  const [user, setUser] = useState(null);
 
   const gamesList = [
-    //{ id: 'guess-word', title: 'Угадай слово', icon: '📝' },
+    { id: 'guess-word', title: 'Угадай слово', icon: '📝' },
     { id: 'spell-word', title: 'Склади слово', icon: '✏️' },
-    //{ id: 'memory', title: 'Пам\'ять', icon: '🧠' },
-    //{ id: 'quiz', title: 'Вікторина', icon: '❓' },
-    //{ id: 'puzzle', title: 'Пазл', icon: '🧩' },
-    //{ id: 'flashcards', title: 'Флеш-картки', icon: '📇' },
-    //{ id: 'typing', title: 'Тренажер набору', icon: '⌨️' },
+    { id: 'memory', title: 'Пам\'ять', icon: '🧠' },
+    { id: 'quiz', title: 'Вікторина', icon: '❓' },
+    { id: 'puzzle', title: 'Пазл', icon: '🧩' },
+    { id: 'flashcards', title: 'Флеш-картки', icon: '📇' },
+    { id: 'typing', title: 'Тренажер набору', icon: '⌨️' },
   ];
 
   const startGame = (gameId) => {
-    if (gameId === 'spell-word') {
-      setShowCategoryPopup(true);
-    } else {
-      setCurrentGame(gameId);
-    }
+    setCurrentGame(gameId);
   };
 
   const exitGame = () => {
     setCurrentGame(null);
-    setSelectedCategory(null);
   };
 
-  const selectCategoryAndStart = (categoryId) => {
-    setSelectedCategory(categoryId);
-    setCurrentGame('spell-word');
-    setShowCategoryPopup(false);
-  };
-
-  const handleClickOutside = (e) => {
-    if (popupRef.current && !popupRef.current.contains(e.target)) {
-      setShowCategoryPopup(false);
-    }
+  const handleLogout = () => {
+    signOut(auth).then(() => {
+      setUser(null);
+    });
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
   }, []);
 
-  return (
+  const HomePage = () => (
     <>
       <Navbar
         gameStarted={!!currentGame}
         onGoHome={exitGame}
-        onLogout={() => alert('Вийшли з додатку')}
-        user={user}
+        onLogout={handleLogout}
+        user={user ? {
+          avatarUrl: `https://i.pravatar.cc/150?u=${user.uid}`,
+          name: user.email
+        } : null}
       />
-
       {!currentGame ? (
         <div style={styles.gamesGrid}>
-          {gamesList.map(game => (
+          {gamesList.map((game) => (
             <GameTile
               key={game.id}
               title={game.title}
@@ -98,30 +69,35 @@ function App() {
       ) : currentGame === 'guess-word' ? (
         <GuessWordGame onExit={exitGame} />
       ) : currentGame === 'spell-word' ? (
-        <SpellWordGame onExit={exitGame} category={selectedCategory} />
+        <SpellWordGame onExit={exitGame} />
       ) : (
         <div style={styles.placeholder}>
           <h2>Гра "{currentGame}" ще не реалізована</h2>
-          <button onClick={exitGame} style={styles.backButton}>Повернутись до вибору ігор</button>
-        </div>
-      )}
-
-      {showCategoryPopup && (
-        <div className="popup-overlay">
-          <div className="popup" ref={popupRef}>
-            <button className="popup-close" onClick={() => setShowCategoryPopup(false)}>×</button>
-            <h3>Оберіть категорію</h3>
-            <div className="popup-categories">
-              {categories.map(cat => (
-                <button key={cat.id} onClick={() => selectCategoryAndStart(cat.id)} className="popup-category-btn">
-                  {cat.label}
-                </button>
-              ))}
-            </div>
-          </div>
+          <button onClick={exitGame} style={styles.backButton}>
+            Повернутись до вибору ігор
+          </button>
         </div>
       )}
     </>
+  );
+
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            user ? (
+              <HomePage />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
+        />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes>
+    </Router>
   );
 }
 
@@ -149,7 +125,7 @@ const styles = {
     color: '#fff',
     fontSize: '1rem',
     cursor: 'pointer',
-  }
+  },
 };
 
 export default App;
