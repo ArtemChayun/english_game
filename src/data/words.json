@@ -1,0 +1,487 @@
+[
+    {
+      "word": "cat",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616408.png",
+      "category": "animals"
+    },
+    {
+      "word": "dog",
+      "image": "https://cdn-icons-png.flaticon.com/512/415/415733.png",
+      "category": "animals"
+    },
+    {
+      "word": "lion",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616546.png",
+      "category": "animals"
+    },
+    {
+      "word": "frog",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616494.png",
+      "category": "animals"
+    },
+    {
+      "word": "bird",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616497.png",
+      "category": "animals"
+    },
+    {
+      "word": "rabbit",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616496.png",
+      "category": "animals"
+    },
+    {
+      "word": "elephant",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616493.png",
+      "category": "animals"
+    },
+    {
+      "word": "monkey",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616409.png",
+      "category": "animals"
+    },
+    {
+      "word": "fish",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616410.png",
+      "category": "animals"
+    },
+    {
+      "word": "snake",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616411.png",
+      "category": "animals"
+    },
+    {
+      "word": "apple",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616453.png",
+      "category": "food"
+    },
+    {
+      "word": "banana",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616454.png",
+      "category": "food"
+    },
+    {
+      "word": "orange",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616462.png",
+      "category": "food"
+    },
+    {
+      "word": "grape",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616456.png",
+      "category": "food"
+    },
+    {
+      "word": "pear",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616463.png",
+      "category": "food"
+    },
+    {
+      "word": "strawberry",
+      "image": "https://cdn-icons-png.flaticon.com/512/616/616464.png",
+      "category": "food"
+    },
+    {
+      "word": "pizza",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595458.png",
+      "category": "food"
+    },
+    {
+      "word": "burger",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595488.png",
+      "category": "food"
+    },
+    {
+      "word": "bread",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595489.png",
+      "category": "food"
+    },
+    {
+      "word": "milk",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595490.png",
+      "category": "food"
+    },
+    {
+      "word": "car",
+      "image": "https://cdn-icons-png.flaticon.com/512/743/743922.png",
+      "category": "transport"
+    },
+    {
+      "word": "bicycle",
+      "image": "https://cdn-icons-png.flaticon.com/512/2838/2838912.png",
+      "category": "transport"
+    },
+    {
+      "word": "bus",
+      "image": "https://cdn-icons-png.flaticon.com/512/2307/2307843.png",
+      "category": "transport"
+    },
+    {
+      "word": "train",
+      "image": "https://cdn-icons-png.flaticon.com/512/2923/2923832.png",
+      "category": "transport"
+    },
+    {
+      "word": "plane",
+      "image": "https://cdn-icons-png.flaticon.com/512/2841/2841777.png",
+      "category": "transport"
+    },
+    {
+      "word": "boat",
+      "image": "https://cdn-icons-png.flaticon.com/512/2838/2838913.png",
+      "category": "transport"
+    },
+    {
+      "word": "ship",
+      "image": "https://cdn-icons-png.flaticon.com/512/2838/2838914.png",
+      "category": "transport"
+    },
+    {
+      "word": "table",
+      "image": "https://cdn-icons-png.flaticon.com/512/128/128882.png",
+      "category": "furniture"
+    },
+    {
+      "word": "chair",
+      "image": "https://cdn-icons-png.flaticon.com/512/2526/2526435.png",
+      "category": "furniture"
+    },
+    {
+      "word": "bed",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065094.png",
+      "category": "furniture"
+    },
+    {
+      "word": "sofa",
+      "image": "https://cdn-icons-png.flaticon.com/512/2526/2526436.png",
+      "category": "furniture"
+    },
+    {
+      "word": "cupboard",
+      "image": "https://cdn-icons-png.flaticon.com/512/2526/2526437.png",
+      "category": "furniture"
+    },
+    {
+      "word": "television",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065170.png",
+      "category": "electronics"
+    },
+    {
+      "word": "computer",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065166.png",
+      "category": "electronics"
+    },
+    {
+      "word": "phone",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065171.png",
+      "category": "electronics"
+    },
+    {
+      "word": "watch",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065172.png",
+      "category": "electronics"
+    },
+    {
+      "word": "headphones",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065173.png",
+      "category": "electronics"
+    },
+    {
+      "word": "shirt",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595489.png",
+      "category": "clothes"
+    },
+    {
+      "word": "pants",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595490.png",
+      "category": "clothes"
+    },
+    {
+      "word": "shoes",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595491.png",
+      "category": "clothes"
+    },
+    {
+      "word": "hat",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595492.png",
+      "category": "clothes"
+    },
+    {
+      "word": "dress",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595493.png",
+      "category": "clothes"
+    },
+    {
+      "word": "sun",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595495.png",
+      "category": "nature"
+    },
+    {
+      "word": "moon",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595496.png",
+      "category": "nature"
+    },
+    {
+      "word": "star",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595497.png",
+      "category": "nature"
+    },
+    {
+      "word": "tree",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595498.png",
+      "category": "nature"
+    },
+    {
+      "word": "flower",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595499.png",
+      "category": "nature"
+    },
+    {
+      "word": "cloud",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595500.png",
+      "category": "nature"
+    },
+    {
+      "word": "river",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595501.png",
+      "category": "nature"
+    },
+    {
+      "word": "mountain",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595502.png",
+      "category": "nature"
+    },
+    {
+      "word": "book",
+      "image": "https://cdn-icons-png.flaticon.com/512/2065/2065126.png",
+      "category": "school"
+    },
+    {
+      "word": "pen",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595504.png",
+      "category": "school"
+    },
+    {
+      "word": "pencil",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595503.png",
+      "category": "school"
+    },
+    {
+      "word": "ruler",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595505.png",
+      "category": "school"
+    },
+    {
+      "word": "school",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595506.png",
+      "category": "buildings"
+    },
+    {
+      "word": "house",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595494.png",
+      "category": "buildings"
+    },
+    {
+      "word": "hospital",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595507.png",
+      "category": "buildings"
+    },
+    {
+      "word": "market",
+      "image": "https://cdn-icons-png.flaticon.com/512/3595/3595508.png",
+      "category": "buildings"
+    },
+    {
+      "word": "red",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000965.png",
+      "category": "colors"
+    },
+    {
+      "word": "blue",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000966.png",
+      "category": "colors"
+    },
+    {
+      "word": "green",
+      "image": "https://cdn-icons-png.flaticon.com/128/16000/16000310.png",
+      "category": "colors"
+    },
+    {
+      "word": "yellow",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000968.png",
+      "category": "colors"
+    },
+    {
+      "word": "black",
+      "image": "https://cdn-icons-png.flaticon.com/128/0/14.png",
+      "category": "colors"
+    },
+    {
+      "word": "white",
+      "image": "https://cdn-icons-png.flaticon.com/128/10037/10037283.png",
+      "category": "colors"
+    },
+    {
+      "word": "one",
+      "image": "https://cdn-icons-png.flaticon.com/512/2855/2855913.png",
+      "category": "numbers"
+    },
+    {
+      "word": "two",
+      "image": "https://cdn-icons-png.flaticon.com/512/2855/2855914.png",
+      "category": "numbers"
+    },
+    {
+      "word": "three",
+      "image": "https://cdn-icons-png.flaticon.com/512/2855/2855915.png",
+      "category": "numbers"
+    },
+    {
+      "word": "four",
+      "image": "https://cdn-icons-png.flaticon.com/512/2855/2855916.png",
+      "category": "numbers"
+    },
+    {
+      "word": "five",
+      "image": "https://cdn-icons-png.flaticon.com/512/2855/2855917.png",
+      "category": "numbers"
+    },
+    {
+      "word": "happy",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000971.png",
+      "category": "emotions"
+    },
+    {
+      "word": "sad",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000972.png",
+      "category": "emotions"
+    },
+    {
+      "word": "angry",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000973.png",
+      "category": "emotions"
+    },
+    {
+      "word": "surprised",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000974.png",
+      "category": "emotions"
+    },
+    {
+      "word": "scared",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000975.png",
+      "category": "emotions"
+    },
+    {
+      "word": "head",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000976.png",
+      "category": "body parts"
+    },
+    {
+      "word": "arm",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000977.png",
+      "category": "body parts"
+    },
+    {
+      "word": "leg",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000978.png",
+      "category": "body parts"
+    },
+    {
+      "word": "hand",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000979.png",
+      "category": "body parts"
+    },
+    {
+      "word": "foot",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000980.png",
+      "category": "body parts"
+    },
+    {
+      "word": "doctor",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000981.png",
+      "category": "professions"
+    },
+    {
+      "word": "teacher",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000982.png",
+      "category": "professions"
+    },
+    {
+      "word": "pilot",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000983.png",
+      "category": "professions"
+    },
+    {
+      "word": "artist",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000984.png",
+      "category": "professions"
+    },
+    {
+      "word": "police officer",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000985.png",
+      "category": "professions"
+    },
+    {
+      "word": "football",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000986.png",
+      "category": "sports"
+    },
+    {
+      "word": "basketball",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000987.png",
+      "category": "sports"
+    },
+    {
+      "word": "swimming",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000988.png",
+      "category": "sports"
+    },
+    {
+      "word": "tennis",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000989.png",
+      "category": "sports"
+    },
+    {
+      "word": "running",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000990.png",
+      "category": "sports"
+    },
+    {
+      "word": "run",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000991.png",
+      "category": "verbs"
+    },
+    {
+      "word": "jump",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000992.png",
+      "category": "verbs"
+    },
+    {
+      "word": "read",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000993.png",
+      "category": "verbs"
+    },
+    {
+      "word": "write",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000994.png",
+      "category": "verbs"
+    },
+    {
+      "word": "eat",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000995.png",
+      "category": "verbs"
+    },
+    {
+      "word": "sleep",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000996.png",
+      "category": "verbs"
+    },
+    {
+      "word": "drink",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000997.png",
+      "category": "verbs"
+    },
+    {
+      "word": "play",
+      "image": "https://cdn-icons-png.flaticon.com/512/1000/1000998.png",
+      "category": "verbs"
+    }
+  ]
