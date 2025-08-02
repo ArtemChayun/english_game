@@ -1,14 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase';
-import { useNavigate } from 'react-router-dom';
 
-function Navbar({ gameStarted, onGoHome, user }) {
+function Navbar({ gameStarted, onGoHome, user, onLogout }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
-  const navigate = useNavigate();
 
-  // Закрыть меню при клике вне его
   useEffect(() => {
     function handleClickOutside(event) {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -21,49 +16,54 @@ function Navbar({ gameStarted, onGoHome, user }) {
 
   const toggleMenu = () => setMenuOpen(prev => !prev);
 
-  const handleLogout = async () => {
-    try {
-      await signOut(auth);
-      navigate('/login');
-    } catch (error) {
-      alert('Помилка при виході: ' + error.message);
-    }
-  };
-
   return (
     <nav style={styles.nav}>
-      {/* Логотип */}
       <div style={styles.logo}>
         <span role="img" aria-label="logo" style={{ fontSize: '1.8rem' }}>📚</span>
         <span style={{ marginLeft: 8, fontWeight: 'bold', fontSize: '1.2rem' }}>LearnEnglishKids</span>
       </div>
 
-      {/* Правая часть */}
       <div style={styles.rightSide}>
         {gameStarted && (
           <button style={styles.homeButton} onClick={onGoHome}>Головна</button>
         )}
-        <div style={styles.avatarWrapper} ref={menuRef}>
-          <img
-            src={user?.avatarUrl || 'https://i.pravatar.cc/150?img=1'}
-            alt="avatar"
-            style={styles.avatar}
-            onClick={toggleMenu}
-          />
-          {menuOpen && (
-            <div style={styles.dropdown}>
-              <button style={styles.dropdownItem} onClick={() => { alert('Профіль'); setMenuOpen(false); }}>
-                Профіль
-              </button>
-              <button style={styles.dropdownItem} onClick={() => { alert('Налаштування'); setMenuOpen(false); }}>
-                Налаштування
-              </button>
-              <button style={styles.dropdownItem} onClick={handleLogout}>
-                Вийти з додатку
-              </button>
+
+        {user ? (
+          <>
+            <button
+              style={styles.adminButton}
+              onClick={() => window.location.href = '/admin'}
+            >
+              Адмінка
+            </button>
+
+            <div style={styles.avatarWrapper} ref={menuRef}>
+              <img
+                src={user.avatarUrl}
+                alt="avatar"
+                style={styles.avatar}
+                onClick={toggleMenu}
+              />
+              {menuOpen && (
+                <div style={styles.dropdown}>
+                  <button style={styles.dropdownItem} onClick={() => { alert('Профіль'); setMenuOpen(false); }}>
+                    Профіль
+                  </button>
+                  <button style={styles.dropdownItem} onClick={() => { alert('Налаштування'); setMenuOpen(false); }}>
+                    Налаштування
+                  </button>
+                  <button style={styles.dropdownItem} onClick={() => { onLogout(); setMenuOpen(false); }}>
+                    Вийти з додатку
+                  </button>
+                </div>
+              )}
             </div>
-          )}
-        </div>
+          </>
+        ) : (
+          <button style={styles.loginButton} onClick={() => window.location.href = '/login'}>
+            🔑
+          </button>
+        )}
       </div>
     </nav>
   );
@@ -101,6 +101,24 @@ const styles = {
     fontWeight: 'bold',
     cursor: 'pointer',
     fontSize: '1rem',
+  },
+  adminButton: {
+    backgroundColor: '#7e57c2',
+    border: 'none',
+    borderRadius: '20px',
+    padding: '0.4rem 1rem',
+    color: '#fff',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    fontSize: '1rem',
+    marginRight: '1rem',
+  },
+  loginButton: {
+    backgroundColor: 'transparent',
+    border: 'none',
+    color: '#fff',
+    fontSize: '1.5rem',
+    cursor: 'pointer',
   },
   avatarWrapper: {
     width: '40px',
